@@ -37,9 +37,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: any # 开发时生成model用的
+  build_runner: ^1.7.1 # 开发时生成model用的
   json_serializable: ^3.0.0 # json序列化和反序列化用的
-  fluttertoast: ^2.2.6
+  oktoast: ^2.3.2
+#  fluttertoast: ^2.2.6
 
 
 # For information on the generic Dart part of this file, see the
