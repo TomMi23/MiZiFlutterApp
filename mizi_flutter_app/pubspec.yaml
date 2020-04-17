@@ -17,6 +17,16 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  fluro: ^1.5.1  # 实现页面跳转
+  dio: ^2.1.3    # http请求用
+  json_annotation: ^3.0.0 # json序列化和反序列化用的
+  fish_redux: ^0.3.1 # 状态管理用的
+  cookie_jar: ^1.0.0
+  flutter_screenutil: ^0.7.0  #屏幕适配插件
+  font_awesome_flutter: ^8.5.0  #第三方 icon 图标插件
+  connectivity: ^0.4.6 #发现网络并进行自动配置
+  shared_preferences: ^0.5.4+6  # sp及时储存
+  device_info: ^0.4.1+3 #获取设备信息
   flutter:
     sdk: flutter
 
@@ -27,6 +37,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: any # 开发时生成model用的
+  json_serializable: ^3.0.0 # json序列化和反序列化用的
+  fluttertoast: ^2.2.6
 
 
 # For information on the generic Dart part of this file, see the
@@ -39,6 +52,24 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - images/startpage_20190930.jpg
+    - images/tam_main_toolbar_background_yfq.png
+    - images/home_header_unlogin.png
+    - images/tam_toolbar_pop_black.png
+    - images/tam_toolbar_pop_close.png
+    - images/tam_toolbar_pop_default.png
+    #菜单按钮
+    - images/icon_menu_addfriend.png
+    - images/icon_menu_group.png
+    #底部tab切换图片资源
+    - images/profile_normal.png
+    - images/profile_pressed.png
+    - images/message_normal.png
+    - images/message_pressed.png
+    #登录页面图片
+    - images/login_logo.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
