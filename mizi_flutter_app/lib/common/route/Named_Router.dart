@@ -4,7 +4,7 @@
 //import 'package:app_jdq_flutter/page/yifenqiPage.dart';
 import 'package:app/page/login/LoginPage.dart';
 import 'package:app/page/main/HomeTabPage.dart';
-import 'package:app/page/main/SplashPage.dart';
+import 'package:app/page/splash/SplashPage.dart';
 import 'package:app/page/main/app.dart';
 import 'package:flutter/material.dart';
 

@@ -1,7 +1,7 @@
 import 'package:app/common/utils/Toast_Utils.dart';
 import 'package:app/config/NavigatorUtil.dart';
 import 'package:flutter/material.dart';
-import 'package:oktoast/oktoast.dart' as OKToast;
+//import 'package:oktoast/oktoast.dart' as OKToast;
 
 class HomeTabPage extends StatefulWidget {
 
@@ -35,7 +35,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
         new IconButton(
           icon: ImageIcon(AssetImage("images/tam_toolbar_pop_black.png")),
           onPressed: () {
-            showToast("点击head左侧图标");
+//            showToast("点击head左侧图标");
             print("点击head左侧图标1");
           },
         ),
