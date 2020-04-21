@@ -16,6 +16,7 @@
   有时间改进一下
 2.DeviceUtils.java使用或覆盖了已过时的 API。
   注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
-  有时间改进一下
+ DeviceUtils.java是从别的项目里copy过来的，里面有很多内容还需要改。
 3.Net 包未添加
+4.Flutter Toast问题还没有解决
 
