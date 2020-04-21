@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:app/config/NavigatorUtil.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MyTabPage extends StatefulWidget {
   MyTabPage({Key key}) : super(key: key);
@@ -12,6 +13,14 @@ class MyTabPage extends StatefulWidget {
 }
 
 class _MyTabPageState extends State<MyTabPage> {
+  //获取到插件与原生的交互通道
+  static const jumpPlugin = const MethodChannel('mizi.flutter.app/plugin');
+
+  Future<Null> _jumpToNative() async {
+    String result = await jumpPlugin.invokeMethod('oneAct');
+
+    print("Android ID:"+result);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +31,9 @@ class _MyTabPageState extends State<MyTabPage> {
         children: <Widget>[
           Center(
             child: RaisedButton(
-              child: Text('返回，并且返回string'),
+              child: Text('获取APP版本号'),
               onPressed: () {
-                NavigatorUtil.goBackWithParams(context, "我是返回值哦");
+                _jumpToNative();
               },
             ),
           ),
