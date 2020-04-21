@@ -1,16 +1,21 @@
-# app
+# Mi App
 
-A new Flutter project.
+## 我学习Flutter
 
-## Getting Started
+致力于打造一套基础的Flutter框架
 
-This project is a starting point for a Flutter application.
+##2020年4月21日 开发
 
-A few resources to get you started if this is your first Flutter project:
+### 开发内容
+1.今日把Splash页面单独出来，想想引导页也可能是个业务会有相关的处理。
+2.把与Native交互的内容添加，方便日后使用
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### 遗留问题
+1.ConnectivityBroadcastReceiver.java使用或覆盖了已过时的 API。
+  注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+  有时间改进一下
+2.DeviceUtils.java使用或覆盖了已过时的 API。
+  注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+  有时间改进一下
+3.Net 包未添加
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
