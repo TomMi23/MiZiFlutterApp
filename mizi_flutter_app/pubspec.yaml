@@ -40,7 +40,7 @@ dev_dependencies:
   build_runner: ^1.7.1 # 开发时生成model用的
   json_serializable: ^3.0.0 # json序列化和反序列化用的
 #  oktoast: ^2.0.0
-#  fluttertoast: ^2.2.6
+  fluttertoast: ^2.2.6
 
 
 # For information on the generic Dart part of this file, see the
