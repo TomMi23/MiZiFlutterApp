@@ -90,7 +90,7 @@ class _MyTabPageState extends State<MyTabPage> {
 //
 //              Map<String, String>  headerMap = new HashMap();
 //              headerMap['Accept'] = 'application/json;charset=utf-8';
-//              headerMap['User-Agent'] = 'Lakala Android Client';
+//              headerMap['User-Agent'] = 'Android Client';
 //              headerMap['Platform'] = 'android';
 //              headerMap['AppVersion'] = '134';
 //              headerMap['SubChannelld'] = '10000017';
