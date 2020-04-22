@@ -12,4 +12,9 @@ class Config {
   static const LANGUAGE_SELECT = "language-select";
   static const LANGUAGE_SELECT_NAME = "language-select-name";
   static const REFRESH_LANGUAGE = "refreshLanguageApp";
+
+  static const ACCEPT = "application/json;charset=utf-8";
+  static const CONTENT_TYPE = "application/json; charset=utf-8";
+  static const CONNECTION = "Keep-Alive";
+  static const ACCEPT_ENCODING = "gzip";
 }

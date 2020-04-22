@@ -43,6 +43,17 @@ class HttpManager {
     }
 
     Map<String, String> headers = new HashMap();
+    headers['Accept'] = Config.ACCEPT;
+    headers['User-Agent'] = 'Android Client';//这里通过全局变量或者从Native端取
+    headers['Platform'] = 'android';//这里通过全局变量或者从Native端取
+    headers['AppVersion'] = '134';//这里通过全局变量或者从Native端取
+    headers['SubChannelld'] = '10000017';//这里通过全局变量或者从Native端取
+    headers['BundleVersion'] = '11';//这里通过全局变量或者从Native端取
+    headers['Content-Type'] = Config.CONTENT_TYPE;
+    headers['Host'] = '10.5.31.13:6080';//这里通过全局变量或者从Native端取
+    headers['Connection'] = Config.CONNECTION;
+    headers['Accept-Encoding'] = Config.ACCEPT_ENCODING;
+    headers['Guid'] = '60cf10daeaf806366edf2f74bbdeb6e6';//这里通过全局变量或者从Native端取
     if (header != null) {
       headers.addAll(header);
     }
