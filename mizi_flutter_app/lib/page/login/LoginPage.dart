@@ -1,3 +1,6 @@
+import 'package:app/api/bean/UserEntity.dart';
+import 'package:app/common/provider/Provider_Store.dart';
+import 'package:app/page/view_models/User_Model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   var _username = '';//密码
   var _isShowPwd = false;//是否显示密码
   var _isShowClear = false;//是否显示输入框尾部的清除按钮
-
+  String userName;
   @override
   void initState() {
     // TODO: implement initState
@@ -48,6 +51,8 @@ class _LoginPageState extends State<LoginPage> {
 
       });
     });
+    var context=this.context;
+    userName = Store.value<UserModel>(context).user.userName;
     super.initState();
   }
 
@@ -144,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
               //设置键盘类型
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: "用户名",
+                labelText: userName,
                 hintText: "请输入手机号",
                 prefixIcon: Icon(Icons.person),
                 //尾部添加清除按钮
@@ -208,6 +213,10 @@ class _LoginPageState extends State<LoginPage> {
         // 设置按钮圆角
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         onPressed: (){
+          UserEntity userEntity = UserEntity.fromJson({"userName": _username, "userCode": "007", "id": "1001", "department": "董事会"});
+
+          Store.value<UserModel>(context).saveUser(userEntity);
+
           _jumpToNative();
 
           //点击登录按钮，解除焦点，回收键盘
