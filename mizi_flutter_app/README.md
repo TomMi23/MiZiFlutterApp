@@ -4,6 +4,51 @@
 
 致力于打造一套基础的Flutter框架
 
+## 2020年4月23日 开发
+### 开发内容
+1.今天就搞了一个数据持久化访问，但是报错。
+Always use package imports. Ex: `import 'package:my_app/my_code.dart';
+Ensure the correct `context` is being used.
+context 使用有问题
+
+### 文件解读
+1.global ->  Storage_Manager.dart
+这个文件主要是全局的一些信息，其中有LocalStorage用于数据访问。
+在mian.dart 的构造函数中调用：await StorageManager.init();
+
+2.api -> bean -> UserEntity.dart
+用户的实体类
+
+3.local -> LocalStorage.dart
+SharedPreferences 本地存储类。这个类主要提供了save、remove、get三个方法。
+
+4.provider -> Provider_Store.dart
+数据状态管理类。提供数据访问的方法
+
+5.provider ->View_State.dart
+一个View的状态类，这里是一个枚举类型。我随便列了几个
+
+6.provider ->View_State_Model.dart
+页面状态的模型，包含disposed、idle, busy, empty, error, unAuthorized等。
+
+7.utils -> Sp_Util.dart
+工具类。getString、setSting等等。
+
+8.page -> view_models -> User_Model.dart
+用户模型类，主要处理UserEntity实体类的内容，clearUser清除数据、saveUser保存数据，获取数据等。
+
+### 遗留问题
+在MyTabPage.dart设置用户信息后，在LoginPage.dart读取，并且重新设置。但是报错。
+
+
+
+## 2020年4月22日 开发
+### 开发内容
+1.把Heard的相关内容放到Config里。
+
+### 遗留问题
+1.虽然把Heard的相关内容放到Config里，但是有些变量需要在全局变量或者Native端取，还需要考虑获取方式。
+
 ## 2020年4月21日 开发
 
 ### 开发内容
@@ -23,9 +68,7 @@
 
 4.Flutter Toast问题还没有解决
 
-## 2020年4月22日 开发
-### 开发内容
-1.把Heard的相关内容放到Config里。
 
-### 遗留问题
-1.虽然把Heard的相关内容放到Config里，但是有些变量需要在全局变量或者Native端取，还需要考虑获取方式。
+
+
+
