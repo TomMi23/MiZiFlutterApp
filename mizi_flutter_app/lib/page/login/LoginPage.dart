@@ -13,9 +13,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-  //获取到插件与原生的交互通道
-  static const jumpPlugin = const MethodChannel('jdqdemo.app_jdq_flutter/plugin');
-
   //焦点
   FocusNode _focusNodeUserName = new FocusNode();
   FocusNode _focusNodePassWord = new FocusNode();
@@ -51,16 +48,10 @@ class _LoginPageState extends State<LoginPage> {
 
       });
     });
-    var context=this.context;
-    userName = Store.value<UserModel>(context).user.userName;
+
     super.initState();
   }
 
-  Future<Null> _jumpToNative() async {
-    String result = await jumpPlugin.invokeMethod('oneAct');
-
-    print("Android ID:"+result);
-  }
 
   @override
   void dispose() {
@@ -117,6 +108,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width:750,height:1334)..init(context);
     print(ScreenUtil().scaleHeight);
+
+    userName = Store.value<UserModel>(context).user.userName;
 
     // logo 图片区域
     Widget logoImageArea = new Container(
@@ -213,11 +206,7 @@ class _LoginPageState extends State<LoginPage> {
         // 设置按钮圆角
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         onPressed: (){
-          UserEntity userEntity = UserEntity.fromJson({"userName": _username, "userCode": "007", "id": "1001", "department": "董事会"});
 
-          Store.value<UserModel>(context).saveUser(userEntity);
-
-          _jumpToNative();
 
           //点击登录按钮，解除焦点，回收键盘
           _focusNodePassWord.unfocus();
@@ -228,6 +217,13 @@ class _LoginPageState extends State<LoginPage> {
             _formKey.currentState.save();
             //todo 登录操作
             print("$_username + $_password");
+
+            //这里才会读取到_username和_password 内容
+            UserEntity userEntity = UserEntity.fromJson({"userName": _username, "userCode": "007", "id": "1001", "department": "董事会"});
+
+            Store.value<UserModel>(context).saveUser(userEntity);
+            print("UserName:"+_username);
+            print("修改后的用户名:"+Store.value<UserModel>(context).user.userName);
           }
 
         },
