@@ -9,6 +9,7 @@ import 'package:app/page/view_models/User_Model.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 class MyTabPage extends StatefulWidget {
   MyTabPage({Key key}) : super(key: key);
@@ -20,6 +21,7 @@ class MyTabPage extends StatefulWidget {
 class _MyTabPageState extends State<MyTabPage> {
   //获取到插件与原生的交互通道
   static const jumpPlugin = const MethodChannel('mizi.flutter.app/plugin');
+
 
   Future<Null> _jumpToNative() async {
     String result = await jumpPlugin.invokeMethod('oneAct');
@@ -118,18 +120,23 @@ class _MyTabPageState extends State<MyTabPage> {
           RaisedButton(
             child: Text('持久化访问数据'),
             onPressed: () {
-              UserEntity userEntity = UserEntity.fromJson({"userName": "张三", "userCode": "007", "id": "1001", "department": "董事会"});
-
-              Store.value<UserModel>(context).saveUser(userEntity);
-              String userName = Store.value<UserModel>(context).user.userName;
-              print(userName);
+              saveUserInfo();
             },
           ),
-
-
-
         ],
       ),
     );
   }
+
+  void saveUserInfo() async {
+    UserEntity userEntity = UserEntity.fromJson({"userName": "张三", "userCode": "007", "id": "1001", "department": "董事会"});
+    print(userEntity.toJson().toString());
+    print("*********************");
+    var context=this.context;
+
+    Store.value<UserModel>(context).saveUser(userEntity);
+    String userName = Store.value<UserModel>(context).user.userName;
+    print(userName);
+  }
+
 }

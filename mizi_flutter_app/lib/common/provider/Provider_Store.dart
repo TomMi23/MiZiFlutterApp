@@ -9,7 +9,8 @@ class Store {
     return MultiProvider(
       providers: [
         // ignore: deprecated_member_use
-        ChangeNotifierProvider(builder: (_) => UserModel()),
+        ChangeNotifierProvider(create: (_) => UserModel()),
+
       ],
       child: child,
     );
