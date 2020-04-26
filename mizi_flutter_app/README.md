@@ -11,7 +11,7 @@ runApp(Store.init(child: MyApp()));
 这样就全局可以访问provider了。后续我会根据每个知识点写一点东西。
 
 ### 待解决的问题
-深入研究provider、GlobalKey、StatefulWidget、State等概念和定义还有使用方法。
+深入研究provider、MultiProvider、GlobalKey、StatefulWidget、Widget、State等概念和定义还有使用方法。
 在实践中去发现问题和解决问题。
 
 ## 2020年4月23日 开发

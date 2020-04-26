@@ -4,6 +4,7 @@ import 'dart:collection';
 import 'package:app/api/bean/UserEntity.dart';
 import 'package:app/common/net/HttpManager.dart';
 import 'package:app/common/provider/Provider_Store.dart';
+import 'package:app/common/route/Named_Router.dart';
 import 'package:app/config/NavigatorUtil.dart';
 import 'package:app/page/view_models/User_Model.dart';
 import 'package:dio/dio.dart';
@@ -121,6 +122,13 @@ class _MyTabPageState extends State<MyTabPage> {
             child: Text('持久化访问数据'),
             onPressed: () {
               saveUserInfo();
+            },
+          ),
+          RaisedButton(
+            child: Text('获取GPS信息'),
+            onPressed: () {
+              NavigatorUtil.goMapGPSPage(context);
+              //Navigator.of(context).pushNamed('/mapGPSPage');
             },
           ),
         ],

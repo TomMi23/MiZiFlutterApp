@@ -27,6 +27,15 @@ class NavigatorUtil {
     Application.router.navigateTo(context, Routes.app, replace: true);
 
   }
+  /// 跳转到地图GPS页面
+  static void goMapGPSPage(BuildContext context) {
+    Application.router.navigateTo(context, Routes.mapGPS, replace: true);
+  }
+  /// 跳转到Google地图页面
+  static void goGoogleMapPage(BuildContext context) {
+    Application.router.navigateTo(context, Routes.googleMap, replace: true);
+  }
+
   /// 返回
   static void goBack(BuildContext context) {
     /// 其实这边调用的是 Navigator.pop(context);
