@@ -9,8 +9,8 @@ class Routes {
   static String splashPage = "/SplashPage";
   static String app = "/app";
   static String login = "/LoginPage";
-  static String mapGPS = "/MapGPSPage";
-  static String googleMap = "/GoogleMapPage";
+//  static String mapGPS = "/MapGPSPage";
+//  static String googleMap = "/GoogleMapPage";
 
   static void configureRoutes(Router router) {
     // 检测如果没有匹配到路由
@@ -25,8 +25,8 @@ class Routes {
     router.define(splashPage, handler: splashHandler);
     router.define(app, handler: appHandler);
     router.define(login, handler: loginHandler);
-    router.define(mapGPS, handler: mapGPSHandler);
-    router.define(googleMap, handler: googleMapHandler);
+//    router.define(mapGPS, handler: mapGPSHandler);
+//    router.define(googleMap, handler: googleMapHandler);
 
   }
 }

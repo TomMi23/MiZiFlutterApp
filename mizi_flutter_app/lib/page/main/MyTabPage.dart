@@ -124,13 +124,13 @@ class _MyTabPageState extends State<MyTabPage> {
               saveUserInfo();
             },
           ),
-          RaisedButton(
-            child: Text('获取GPS信息'),
-            onPressed: () {
-              NavigatorUtil.goMapGPSPage(context);
-              //Navigator.of(context).pushNamed('/mapGPSPage');
-            },
-          ),
+//          RaisedButton(
+//            child: Text('获取GPS信息'),
+//            onPressed: () {
+//              NavigatorUtil.goMapGPSPage(context);
+//              //Navigator.of(context).pushNamed('/mapGPSPage');
+//            },
+//          ),
         ],
       ),
     );

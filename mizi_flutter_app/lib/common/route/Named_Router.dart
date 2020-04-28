@@ -2,8 +2,8 @@
 //import 'package:app_jdq_flutter/app.dart';
 //import 'package:app_jdq_flutter/page/loginPage.dart';
 //import 'package:app_jdq_flutter/page/yifenqiPage.dart';
-import 'package:app/page/gmap/GoogleMapPage.dart';
-import 'package:app/page/gmap/MapGPSPage.dart';
+//import 'package:app/page/gmap/GoogleMapPage.dart';
+//import 'package:app/page/gmap/MapGPSPage.dart';
 import 'package:app/page/login/LoginPage.dart';
 import 'package:app/page/main/HomeTabPage.dart';
 import 'package:app/page/splash/SplashPage.dart';
@@ -28,8 +28,8 @@ class NamedRouter {
       '/splashPage': (context) => SplashPage(),
       '/homeTabPage': (context) => HomeTabPage(),
       '/loginPage': (context) => LoginPage(),
-      '/mapGPSPage': (context) => MapGPSPage(),
-      '/googleMapPage': (context) => GoogleMapPage(),
+//      '/mapGPSPage': (context) => MapGPSPage(),
+//      '/googleMapPage': (context) => GoogleMapPage(),
     };
     return routes;
   }
