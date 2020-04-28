@@ -11,6 +11,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class MyTabPage extends StatefulWidget {
   MyTabPage({Key key}) : super(key: key);
@@ -127,13 +128,33 @@ class _MyTabPageState extends State<MyTabPage> {
           RaisedButton(
             child: Text('获取GPS信息'),
             onPressed: () {
-              NavigatorUtil.goMapGPSPage(context);
-              //Navigator.of(context).pushNamed('/mapGPSPage');
+              this.checkPersmission();
+
             },
           ),
         ],
       ),
     );
+  }
+
+
+  void checkPersmission() async {
+    // 申请权限
+    Map<PermissionGroup,
+        PermissionStatus> permissions = await PermissionHandler()
+        .requestPermissions([PermissionGroup.location]);
+    // 申请结果
+    PermissionStatus permission = await PermissionHandler()
+        .checkPermissionStatus(PermissionGroup.location);
+
+    if (permission == PermissionStatus.granted) {
+      print("状态："+permission.toString());
+      //NavigatorUtil.goGpsPage(context);
+      Navigator.pushNamed(context, '/AMapPage');
+      //Navigator.of(context).pushNamed('/AMapPage');
+    } else {
+      bool isOpened = await PermissionHandler().openAppSettings(); //打开应用设置
+    }
   }
 
   void saveUserInfo() async {

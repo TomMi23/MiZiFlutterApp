@@ -1,3 +1,4 @@
+import 'package:app/page/amap/GpsPage.dart';
 import 'package:app/page/gmap/GoogleMapPage.dart';
 import 'package:app/page/gmap/MapGPSPage.dart';
 import 'package:app/page/login/LoginPage.dart';
@@ -47,6 +48,11 @@ var mapGPSHandler = new Handler(
 var googleMapHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
       return new GoogleMapPage();
+    });
+/// 跳转到GpsPage页
+var aMapHandler = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+      return new GpsPage();
     });
 
 

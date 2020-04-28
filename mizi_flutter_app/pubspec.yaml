@@ -34,7 +34,14 @@ dependencies:
   # 数据管理层 https://pub.flutter-io.cn/packages/provider
   provider: ^3.2.0
   # Google地图
-  google_maps_flutter: ^0.5.21+14
+  #google_maps_flutter: ^0.5.21+14
+  # 高德地图
+  amap_location: ^0.2.0
+  amap_map_fluttify: ^0.5.2+d62f0ad
+  flutter_swiper: ^1.1.6  #无限轮播插件
+  permission_handler: ^4.3.0  #申请权限
+
+
 
 
 

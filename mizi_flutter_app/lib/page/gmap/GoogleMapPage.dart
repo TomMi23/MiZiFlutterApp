@@ -9,13 +9,10 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
   @override
   void initState() {
 
-
-
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return null;
   }
 }

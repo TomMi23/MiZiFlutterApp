@@ -35,6 +35,10 @@ class NavigatorUtil {
   static void goGoogleMapPage(BuildContext context) {
     Application.router.navigateTo(context, Routes.googleMap, replace: true);
   }
+  /// 跳转到GpsPage地图页面
+  static void goGpsPage(BuildContext context) {
+    Application.router.navigateTo(context, Routes.aMap, replace: true);
+  }
 
   /// 返回
   static void goBack(BuildContext context) {
