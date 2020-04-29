@@ -11,21 +11,27 @@ description: A new Flutter project.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 2.0.0+1
+version: 1.0.0+1
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  fluro: ^1.5.1  # 实现页面跳转
-  dio: ^2.1.3    # http请求用
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  fluro: ^1.5.2  # 实现页面跳转
+  cupertino_icons: ^0.1.2
+  dio: ^3.0.9    # http请求用
   json_annotation: ^3.0.0 # json序列化和反序列化用的
-  fish_redux: ^0.3.1 # 状态管理用的
-  cookie_jar: ^1.0.0
-  flutter_screenutil: ^0.7.0  #屏幕适配插件
-  font_awesome_flutter: ^8.5.0  #第三方 icon 图标插件
+  fish_redux: ^0.3.3 # 状态管理用的
+  cookie_jar: ^1.0.1
+  flutter_screenutil: ^1.0.2  #屏幕适配插件
+  font_awesome_flutter: ^8.8.1  #第三方 icon 图标插件
   connectivity: ^0.4.6 #发现网络并进行自动配置
-  shared_preferences: ^0.5.4+6  # sp及时储存
+  shared_preferences: ^0.5.4+8  # sp及时储存
   device_info: ^0.4.1+3 #获取设备信息
   # 本地json对象存储
   localstorage: ^3.0.2+5
@@ -35,6 +41,7 @@ dependencies:
   provider: ^3.2.0
   # Google地图
   #google_maps_flutter: ^0.5.21+14
+  firebase_core: ^0.4.0+9
   # 高德地图
   amap_location: ^0.2.0
   amap_map_fluttify: ^0.5.2+d62f0ad
@@ -45,12 +52,6 @@ dependencies:
 
 
 
-  flutter:
-    sdk: flutter
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
 
 dev_dependencies:
   flutter_test:

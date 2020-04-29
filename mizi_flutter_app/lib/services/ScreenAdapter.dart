@@ -2,13 +2,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ScreenAdapter{
 
   static init(context){
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
+    ScreenUtil.init(context,width: 750, height: 1334);
+    //ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
   }
   static height(double value){
-    return ScreenUtil.getInstance().setHeight(value);
+    return ScreenUtil().setHeight(value);
   }
   static width(double value){
-    return ScreenUtil.getInstance().setWidth(value);
+    return ScreenUtil().setWidth(value);
   }
   static getScreenHeight(){
     return ScreenUtil.screenHeightDp;
@@ -25,7 +26,7 @@ class ScreenAdapter{
   }
 
   static size(double value){
-    return ScreenUtil.getInstance().setSp(value);
+    return ScreenUtil().setSp(value);
   }
 
 // ScreenUtil.screenHeight

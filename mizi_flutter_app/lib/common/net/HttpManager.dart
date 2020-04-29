@@ -134,8 +134,9 @@ class HttpManager {
     }
 
     try {
+      print("option.contentType:"+option.contentType.toString());
       if (option.contentType != null &&
-          option.contentType.primaryType == "text") {
+          option.contentType.toString() == "text") {
         return new ResultData(response.data, true, Code.SUCCESS);
       } else {
         var responseJson = response.data;
@@ -206,7 +207,7 @@ class HttpManager {
       }
     }
 
-    return DioError(request: options.request, message: "User is no longer active");
+    return DioError(request: options.request, error: "User is no longer active");
   }
 
   static requestInterceptor(RequestOptions options) async {
