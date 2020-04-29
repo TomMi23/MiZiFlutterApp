@@ -8,8 +8,7 @@ class GpsPage extends StatefulWidget{
   _GpsPageState createState() => _GpsPageState();
 }
 
-class _GpsPageState extends State<GpsPage>  {
-
+class _GpsPageState extends State<GpsPage> {
   double longitude = 0.0;
   double latitude = 0.0;
 
@@ -17,16 +16,18 @@ class _GpsPageState extends State<GpsPage>  {
   void initState() {
     super.initState();
     this._getLocation();
+
   }
 
-  _getLocation () async {
+  _getLocation() async {
     //启动一下
-    await AMapLocationClient.startup(new AMapLocationOption(desiredAccuracy: CLLocationAccuracy.kCLLocationAccuracyBest));
+    await AMapLocationClient.startup(new AMapLocationOption(
+        desiredAccuracy: CLLocationAccuracy.kCLLocationAccuracyBest));
     //获取地理位置（直接定位）
     var result = await AMapLocationClient.getLocation(true);
     setState(() {
-      this.longitude = result.longitude;   //经度
-      this.latitude = result.latitude;   //纬度
+      this.longitude = result.longitude; //经度
+      this.latitude = result.latitude; //纬度
     });
   }
 
@@ -40,6 +41,8 @@ class _GpsPageState extends State<GpsPage>  {
 
   @override
   Widget build(BuildContext context) {
+    //这个方法得在initState()之后调用
+    ScreenAdapter.init(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("获取位置信息"),
@@ -49,7 +52,7 @@ class _GpsPageState extends State<GpsPage>  {
           Center(
             child: RaisedButton(
               child: Text("获取位置"),
-              onPressed: (){
+              onPressed: () {
                 _getLocation();
               },
             ),
@@ -66,8 +69,8 @@ class _GpsPageState extends State<GpsPage>  {
                   mapType: MapType.Standard,
                   showZoomControl: false,
                   zoomLevel: 15,
-                  centerCoordinate: LatLng(this.latitude,this.longitude),
-                  onMapCreated: (controller) async{
+                  centerCoordinate: LatLng(this.latitude, this.longitude),
+                  onMapCreated: (controller) async {
                     await controller.showMyLocation(true);
                   },
                 ),
