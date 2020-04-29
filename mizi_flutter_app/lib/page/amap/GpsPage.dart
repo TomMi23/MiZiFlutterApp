@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:amap_location/amap_location.dart';
 import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 
+///调用高德地图可能会因为Key报错，在测试环境已经成功
 class GpsPage extends StatefulWidget{
   GpsPage({Key key});
   _GpsPageState createState() => _GpsPageState();
@@ -20,6 +21,7 @@ class _GpsPageState extends State<GpsPage> {
   }
 
   _getLocation() async {
+    print("调用高德地图可能会因为Key报错，在测试环境已经成功");
     //启动一下
     await AMapLocationClient.startup(new AMapLocationOption(
         desiredAccuracy: CLLocationAccuracy.kCLLocationAccuracyBest));
