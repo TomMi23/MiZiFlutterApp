@@ -1,6 +1,5 @@
 import 'package:app/page/amap/GpsPage.dart';
 import 'package:app/page/gmap/GoogleMapPage.dart';
-import 'package:app/page/gmap/MapGPSPage.dart';
 import 'package:app/page/login/LoginPage.dart';
 import 'package:app/page/main/HomeTabPage.dart';
 import 'package:app/page/main/MyTabPage.dart';
@@ -39,11 +38,6 @@ var splashHandler = new Handler(
       return new SplashPage();
     });
 
-/// MapGPSPage
-var mapGPSHandler = new Handler(
-    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-      return new MapGPSPage();
-    });
 /// 跳转到GoogleMapPage页
 var googleMapHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {

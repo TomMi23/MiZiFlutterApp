@@ -9,7 +9,6 @@ class Routes {
   static String splashPage = "/SplashPage";
   static String app = "/app";
   static String login = "/LoginPage";
-  static String mapGPS = "/MapGPSPage";
   static String googleMap = "/GoogleMapPage";
   static String aMap = "/GpsPage";
 
@@ -26,7 +25,6 @@ class Routes {
     router.define(splashPage, handler: splashHandler);
     router.define(app, handler: appHandler);
     router.define(login, handler: loginHandler);
-    router.define(mapGPS, handler: mapGPSHandler);
     router.define(googleMap, handler: googleMapHandler);
     router.define(aMap, handler: aMapHandler);
 
