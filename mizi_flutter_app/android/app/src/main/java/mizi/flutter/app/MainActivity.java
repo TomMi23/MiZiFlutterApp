@@ -5,6 +5,7 @@ import io.flutter.app.FlutterActivity;
 import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 import mizi.flutter.app.plugin.FlutterPluginJumpToAct;
+import mizi.flutter.app.plugin.FlutterPluginJumpToBluetooth;
 //import mizi.flutter.app.plugin.FlutterPluginJumpToGPS;
 
 public class MainActivity extends FlutterActivity {
@@ -19,6 +20,7 @@ public class MainActivity extends FlutterActivity {
   private static void registerCustomPlugin(PluginRegistry registrar) {
 
     FlutterPluginJumpToAct.registerWith(registrar.registrarFor(FlutterPluginJumpToAct.CHANNEL));
+    FlutterPluginJumpToBluetooth.registerWith(registrar.registrarFor(FlutterPluginJumpToBluetooth.CHANNEL));
 //    FlutterPluginJumpToGPS.registerWith(registrar.registrarFor(FlutterPluginJumpToGPS.CHANNEL));
     //FlutterPluginJumpToAct.registerWith(registrar.registrarFor(FlutterPluginJumpToAct.CHANNEL));
   }
