@@ -129,7 +129,12 @@ class _MyTabPageState extends State<MyTabPage> {
             child: Text('获取GPS信息'),
             onPressed: () {
               this.checkPersmission();
-
+            },
+          ),
+          RaisedButton(
+            child: Text('查看蓝牙'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/BluetoothPage');
             },
           ),
         ],

@@ -3,6 +3,7 @@
 //import 'package:app_jdq_flutter/page/loginPage.dart';
 //import 'package:app_jdq_flutter/page/yifenqiPage.dart';
 import 'package:app/page/amap/GpsPage.dart';
+import 'package:app/page/bluetooth/BluetoothPage.dart';
 import 'package:app/page/gmap/GoogleMapPage.dart';
 import 'package:app/page/login/LoginPage.dart';
 import 'package:app/page/main/HomeTabPage.dart';
@@ -30,6 +31,7 @@ class NamedRouter {
       '/loginPage': (context) => LoginPage(),
       '/googleMapPage': (context) => GoogleMapPage(),
       '/AMapPage': (context) => GpsPage(),
+      '/BluetoothPage': (context) => BluetoothPage(),
     };
     return routes;
   }

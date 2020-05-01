@@ -13,6 +13,8 @@ Future main() async {
 //  Router router = Router();
 //  Routes.configureRoutes(router);
 //  Application.router = router;
+  WidgetsFlutterBinding.ensureInitialized();
+
   await StorageManager.init();
 
   return   //运行崩溃收集
@@ -24,6 +26,7 @@ Future main() async {
       SystemChrome.setPreferredOrientations(
           [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp])
           .then((_) {
+
         runApp(Store.init(child: MyApp()));
 
         if (Platform.isAndroid) {

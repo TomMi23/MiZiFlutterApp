@@ -44,7 +44,7 @@ dependencies:
   firebase_core: ^0.4.0+9
   # 高德地图
   amap_location: ^0.2.0
-  amap_map_fluttify: ^0.5.2+d62f0ad
+  amap_map_fluttify: ^0.21.0
   flutter_swiper: ^1.1.6  #无限轮播插件
   permission_handler: ^4.3.0  #申请权限
 

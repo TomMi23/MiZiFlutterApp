@@ -73,7 +73,7 @@ class _GpsPageState extends State<GpsPage> {
                   zoomLevel: 15,
                   centerCoordinate: LatLng(this.latitude, this.longitude),
                   onMapCreated: (controller) async {
-                    await controller.showMyLocation(true);
+                    await controller.showMyLocation(MyLocationOption(show: true));
                   },
                 ),
               ],

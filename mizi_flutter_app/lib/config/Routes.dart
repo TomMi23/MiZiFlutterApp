@@ -11,6 +11,7 @@ class Routes {
   static String login = "/LoginPage";
   static String googleMap = "/GoogleMapPage";
   static String aMap = "/GpsPage";
+  static String bluetooth="/BluetoothPage";
 
   static void configureRoutes(Router router) {
     // 检测如果没有匹配到路由
@@ -27,6 +28,7 @@ class Routes {
     router.define(login, handler: loginHandler);
     router.define(googleMap, handler: googleMapHandler);
     router.define(aMap, handler: aMapHandler);
+    router.define(bluetooth, handler: bluetoothHandler);
 
   }
 }

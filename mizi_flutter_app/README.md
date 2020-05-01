@@ -3,6 +3,55 @@
 ## 我学习Flutter
 
 致力于打造一套基础的Flutter框架
+## 2020年5月01日
+### 开发内容
+1.终于把执行Flutter upgrade造成的"崩溃"问题解决了。
+记录一下新路历程太难了。
+执行完Flutter upgrade之后就无法运行了，怎么办那？
+在Android Studio里重新设置SDK路径，无果。
+那么就索性根据提示咱就升级，升级之后翻墙也不行，只能下载升级包来手动处理。
+（不明白我都能翻墙下载升级包了，而自动升级就是下载不下来升级包？？？？）
+接下来把升级包"dart-sdk-darwin-x64.zip"放到"flutter-sdk/bin/cache/" 目录下，
+放置好之后打开/bin/internal/update_dart_sdk.sh文件，<font color='red'>注释掉以下行.
+(注意以下行，有些内容不用注释掉，看清楚)
+</font>
+~~~
+  rm -rf -- "$DART_SDK_PATH"
+  mkdir -m 755 -p -- "$DART_SDK_PATH"
+
+  curl --continue-at - --location --output "$DART_SDK_ZIP" "$DART_SDK_URL" 2>&1 || {
+    echo
+    echo "Failed to retrieve the Dart SDK from: $DART_SDK_URL"
+    echo "If you're located in China, please see this page:"
+    echo "  https://flutter.io/community/china"
+    echo
+    rm -f -- "$DART_SDK_ZIP"
+    exit 1
+  }
+~~~
+
+紧接着修改"flutter.gradle"文件，目录在"flutter-sdk/packages/flutter_tools/gradle"下。
+修改如下：
+~~~ python
+repositories {
+        //google()
+        //jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+}
+~~~
+执行flutter doctor 命令，可能会报错等待时间过长的问题。直接关掉重新来，多来几次就好了
+
+如果还不行执行以下命令
+~~~
+   export PUB_HOSTED_URL=https://pub.flutter-io.cn
+   export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+   flutter doctor
+~~~
+
+等待成功吧。
+
 ## 2020年4月30日 开发
 ### 开发内容
 1.今天把蓝牙插件开发了，但是Flutter由于我昨天执行了一个Flutter upgrade命令

@@ -35,6 +35,10 @@ class NavigatorUtil {
   static void goGpsPage(BuildContext context) {
     Application.router.navigateTo(context, Routes.aMap, replace: true);
   }
+  /// 跳转蓝牙页面
+  static void goBluetoothPage(BuildContext context) {
+    Application.router.navigateTo(context, Routes.bluetooth, replace: true);
+  }
 
   /// 返回
   static void goBack(BuildContext context) {

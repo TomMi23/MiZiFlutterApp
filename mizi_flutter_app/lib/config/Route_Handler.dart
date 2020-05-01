@@ -48,5 +48,10 @@ var aMapHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
       return new GpsPage();
     });
+/// 跳转到蓝牙页
+var bluetoothHandler = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+      return new GpsPage();
+    });
 
 
